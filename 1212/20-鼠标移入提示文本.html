@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.tips{
+				background: yellow;
+				font-size: 14px;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<form action="">
+			<p>用户名：<input type="text" name="userName"/></p>
+			<p>密码：<input type="password" name="password"/></p>
+			<p>确认密码：<input type="password" name="password1"/></p>
+			<p>
+				<input type="checkbox" id="cb"/>
+				<label for="cd">十天内登录</label>
+			</p>
+			<div class="tips">
+				请注意信息安全~请注意信息安全请注意信息安全请注意信息安全请注意信息安全
+			</div>
+		</form>
+		
+		
+		<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			$("label").mouseenter(function(){
+				$(".tips").show(400);
+			})
+			
+			$("label").mouseleave(function(){
+				$(".tips").hide(400);
+			})
+		</script>
+	</body>
+</html>

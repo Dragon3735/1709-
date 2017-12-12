@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				height: 5555px;
+				background-image: -webkit-linear-gradient(top,red,orange,yellow,green,purple,blue);
+			}
+		</style>
+	</head>
+	<body>
+		
+		<button>点击移动</button>
+		
+		<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			//获取scrollTop位置
+			$(window).scroll(function(){
+				console.log( $(window).scrollTop() );
+			})
+			
+			//点击按钮移动
+			$("button").click(function(){
+				$("html,body").animate({
+					"scrollTop": 5000
+				},2000);
+			})
+			
+		</script>
+	</body>
+</html>

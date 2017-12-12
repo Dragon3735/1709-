@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 600px;
+				height: 100px;
+				border: 1px solid black;
+			}
+			p{
+				float: left;
+				width: 60px;
+				height: 60px;
+				margin-right: 10px;
+				background: #ccc;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="box1">
+			<p></p>
+			<p class="oP"></p>
+			<p class="oP"></p>
+			<p></p>
+		</div>
+		<div class="box2">
+			<p></p>
+			<p class="oP">1111</p>
+			<p class="oP">我是想要改变颜色的</p>
+			<p></p>
+		</div>
+		
+		
+		<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+//			$(".box2 p").eq(2).css("background","skyblue");
+			
+//			$("p").eq(6).css("background","red");
+
+//			$(".oP").eq(3).css("background","blue");
+			
+			$("p:first").css("background","blue");
+			
+		</script>
+	</body>
+</html>

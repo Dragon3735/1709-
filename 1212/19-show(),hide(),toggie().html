@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 200px;
+				height: 200px;
+				background: red;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<input type="button" value="show"/>
+		<input type="button" value="hide"/>
+		<input type="button" value="toggle"/>
+		<input type="button" value="show-1000"/>
+		<input type="button" value="hide-1000"/>
+		<input type="button" value="toggle-1000"/>
+		
+		<div></div>
+		
+		
+		<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			//显示div元素通过display:block;
+			$("input:eq(0)").click(function(){
+				$("div").show();
+			})
+			//隐藏div元素通过display:none;
+			$("input:eq(1)").click(function(){
+				$("div").hide();
+			})
+			
+			//自动切换显示、隐藏
+			$("input:eq(2)").click(function(){
+				$("div").toggle();
+			})
+			
+			//显示div元素通过display:block;
+			$("input:eq(3)").click(function(){
+				$("div").show(1000);
+			})
+			//隐藏div元素通过display:none;
+			$("input:eq(4)").click(function(){
+				$("div").hide(1000);
+			})
+			
+			//自动切换显示、隐藏
+			$("input:eq(5)").click(function(){
+				$("div").toggle(1000,function(){
+					alert("我是回调函数");
+				});
+			})
+			
+		</script>
+	</body>
+</html>

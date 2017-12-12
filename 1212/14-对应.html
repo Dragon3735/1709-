@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 600px;
+				height: 100px;
+				border: 1px solid black;
+			}
+			p{
+				float: left;
+				width: 60px;
+				height: 60px;
+				margin-right: 10px;
+				background: #ccc;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="box1">
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+		</div>
+		<div class="box2">
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+		</div>
+		
+		<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			$(".box1 p").click(function(){
+				//让box2中对应的p标签改变颜色
+				 //$(this).index() :  box1中p标签的当前下标
+				$(".box2 p").eq( $(this).index() ).css("background","red");
+				
+			})
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			p{
+				width: 60px;
+				height: 60px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<p class="oP">oP</p>
+		<p class="oP">oP</p>
+		<p></p>
+		<p class="oP">oP</p>
+		<p></p>
+		
+		<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			$("p").click(function(){
+//				console.log( $(this).is(".oP") );
+				console.log( $(this).is(":animated") );
+			})
+			
+			$("p:eq(4)").animate({"width":600},6000);
+			
+		</script>
+	</body>
+</html>

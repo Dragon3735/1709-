@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				position: absolute;
+				width: 80px;
+				height: 80px;
+				background: orange;
+				left: 100px;
+				top: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" value="stop()"/>
+		<input type="button" value="stop(true)"/>
+		<input type="button" value="stop(true,true)"/>
+		<input type="button" value="stop(false,true)"/>
+		<input type="button" value="finish()"/>
+		
+		<div></div>
+		
+		
+		<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$("div").animate({"left":800},2000);
+			$("div").animate({"top":300},2000);
+			$("div").animate({"left":100},2000);
+			$("div").animate({"top":100},2000);
+			
+			
+			//停止当前的animate动画，但是不清除队列，立即执行后面的animate动画：
+			$("input:eq(0)").click(function(){
+				$("div").stop(); 
+			})
+			
+			//停止当前的animate动画，并且清除队列，盒子留在了此时的位置：
+			$("input:eq(1)").click(function(){
+				$("div").stop(true); 
+			})
+			
+			//瞬间完成当前的animate动画，并且清除队列
+			$("input:eq(2)").click(function(){
+				$("div").stop(true,true); 
+			})
+			
+			//瞬间完成当前的animate动画，但是不清楚队列，立即执行后面的动画：
+			$("input:eq(3)").click(function(){
+				$("div").stop(false,true); 
+			})
+			
+			
+			//finish()瞬间完成所有动画队列
+			$("input:eq(4)").click(function(){
+				$("div").finish();
+			})
+			
+		</script>
+	</body>
+</html>

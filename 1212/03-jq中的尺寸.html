@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 200px;
+				height: 200px;
+				padding: 10px;
+				border: 20px solid orange;
+				margin: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		
+		
+		<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			//想得到div内容宽度
+			console.log($("div").width());
+			//得到div内容宽度+padding距离
+			console.log($("div").innerWidth());
+			//得到div内容宽度+padding距离+border宽度
+			console.log($("div").outerWidth());
+			
+			//得到div内容宽度+padding距离+border宽度+margin
+			console.log($("div").outerWidth(true));
+		</script>
+	</body>
+</html>

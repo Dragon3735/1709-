@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.nav{
+				width: 960px;
+				height: 40px;
+				margin: 50px auto;
+			}
+			.nav ul{
+				list-style: none;
+			}
+			.nav ul li{
+				float: left;
+				width: 120px;
+				height: 40px;
+				text-align: center;
+				line-height: 40px;
+				background: yellowgreen;
+				position: relative;
+			}
+			.nav ul li a{
+				text-decoration: none;
+				color: white;
+			}
+			
+			.nav ul li .dropbox{
+				position: absolute;
+				top: 40px;
+				width: 180px;
+				display: none;
+				padding-top: 10px;
+			}
+			
+			.nav ul li .dropbox .inner{
+				background: #ccc;
+			}
+			
+			.nav ul li .dropbox .inner a{
+				display: block;
+				line-height: 30px;
+				height: 30px;
+				text-align: center;
+			}
+			.nav ul li .dropbox .inner a:hover{
+				background: orange;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class="nav">
+			<ul>
+				<li><a href="#">栏目名称</a></li>
+				<li>
+					<a href="#">栏目名称</a>
+					<div class="dropbox">
+						<div class="inner">
+							<p><a href="#">内容1</a></p>
+							<p><a href="#">内容2</a></p>
+							<p><a href="#">内容3</a></p>
+							<p><a href="#">内容4</a></p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href="#">栏目名称</a>
+					<div class="dropbox">
+						<div class="inner">
+							<p><a href="#">内容1</a></p>
+							<p><a href="#">内容2</a></p>
+							<p><a href="#">内容3</a></p>
+							<p><a href="#">内容4</a></p>
+						</div>
+					</div>
+				</li>
+				<li><a href="#">栏目名称</a></li>
+				<li><a href="#">栏目名称</a></li>
+				<li><a href="#">栏目名称</a></li>
+				<li><a href="#">栏目名称</a></li>
+			</ul>
+		</div>
+		
+		
+		<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			//鼠标穿入
+			$("li").mouseenter(function(){
+				//穿入当前的li元素，找到他的儿子div类名为dropbox的元素让它滑动显示
+				$(this).children(".dropbox").slideDown();
+			})
+			
+			
+			//鼠标穿出
+			$("li").mouseleave(function(){
+				
+				$(this).children(".dropbox").slideUp();
+			})
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			h3{
+				width: 60px;
+				height: 60px;
+				background: #ccc;
+			}
+			p{
+				width: 60px;
+				height: 60px;
+				background: #ccc;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<h3>h3</h3>
+			<h3>h3</h3>
+			<p>p1</p>
+			<p>p</p>
+			<p>p</p>
+			<p>p</p>
+			<p>p</p>
+			<p>p</p>
+			<p>p</p>
+			<p>p</p>
+		</div>
+		
+		
+		
+		<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+//			$("#box").children("h3").css("background","#800080");
+			
+//			$("#box").children(":odd").css("background","orange");
+			
+//			console.log( $("#box").children().size() );
+			
+			 $("#box").children().eq(0).css("background","red");
+		</script>
+	</body>
+</html>

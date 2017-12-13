@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">
+			<p>呵呵</p>
+			<p class="oP">哈哈</p>
+		</div>
+		
+		
+		<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+//			var $obj = $("<p>嘻嘻</p>");
+//			
+//			$obj.css("background","red");
+//			
+//			$("#box").append($obj);
+			
+			//给父级 。插入一个 (儿子)
+//			$("#box").append("<p>思密达~</p>");
+			
+			//儿子。appendTo(父级)
+//			$("<p>今天天气冷~</p>").appendTo( $("#box") );
+			
+			$(".oP").after("<p>思密达~</p>");
+			
+			
+		</script>
+	</body>
+</html>

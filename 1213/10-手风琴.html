@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.accordion{
+				width: 500px;
+				margin: 100px auto;
+				border: 1px solid #000;
+			}
+			.accordion ul{
+				list-style: none;
+			}
+			.accordion ul li h3{
+				background: skyblue;
+				line-height: 40px;
+				padding: 0 10px;
+				border-bottom: 1px solid #000;
+				color: white;
+				cursor: pointer;
+				position: relative;
+			}
+			.accordion ul li.cur h3{
+				background: orange;
+			}
+			
+			.accordion ul li .content{
+				padding: 10px;
+				line-height: 15px;
+				font-size: 15px;
+				display: none;
+			}
+			.accordion ul li.first .content{
+				display: block;
+			}
+			
+			.accordion ul li i{
+				position: absolute;
+				right: 10px;
+				top: 10px;
+				width: 16px;
+				height: 16px;
+				background: url(images/icon.png);
+				transition: all 1s ease 0s;
+			}
+			.accordion ul li.cur i{
+				/*当有 cur类名的时候 转90度*/
+				transform: rotate(90deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="accordion">
+			<ul>
+				<li class="cur first">
+					<h3>最近课程的demo怎么这么多<i></i></h3>
+					<div class="content">
+						<p>
+							每周996~上6天才能休息一天~
+						</p>
+					</div>
+				</li>
+				<li>
+					<h3>最近课程的demo怎么这么多<i></i></h3>
+					<div class="content">
+						<p>
+							每周996~上6天才能休息一天~
+						</p>
+					</div>
+				</li>
+				<li>
+					<h3>最近课程的demo怎么这么多<i></i></h3>
+					<div class="content">
+						<p>
+							每周996~上6天才能休息一天~
+						</p>
+					</div>
+				</li>
+				<li>
+					<h3>最近课程的demo怎么这么多<i></i></h3>
+					<div class="content">
+						<p>
+							每周996~上6天才能休息一天~
+						</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+		
+		<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			//监听h3标签
+			$(".accordion ul li h3").click(function(){
+				
+				//所有的content合上
+				$(".content").slideUp();
+				
+				//当前元素的content显示
+//				console.log( $(this).siblings(".content").is(":visible") );
+				if( $(this).siblings(".content").is(":visible") ){
+					//如果自己的content是可见的
+					//自己的内容合上，变为不可见，自己父级li去掉cur类名
+					$(this).siblings(".content").stop(true).slideUp();
+					$(this).parent().removeClass("cur");
+				}else{
+					//反之，如果自己的content不可见
+					$(".cur").removeClass("cur");  //去掉之前的箭头样式
+					
+					//当前元素的父级li要加上类名cur
+					$(this).parent().addClass("cur");
+					//当前h3内容可见
+					$(this).siblings(".content").stop(true).slideDown();
+					
+					
+				}
+				
+			})
+			
+			
+		</script>
+	</body>
+</html>

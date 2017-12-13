@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			p{
+				width: 60px;
+				height: 60px;
+				background: #ccc;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<ul>
+				<li>li1
+					<p>p1</p>
+				</li>
+				<li>li2
+					<p>p2</p>
+				</li>
+				<li>li3
+					<p>p3</p>
+				</li>
+				<li>li4
+					<p>p4</p>
+				</li>
+			</ul>
+		</div>
+		
+		
+		
+		<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+//			$("#box").find("p").css("background","red");
+			
+//			console.log($("#box").find("*").length );
+
+			$("#box").find("*").eq(1).css("background","red");
+			
+		</script>
+	</body>
+</html>

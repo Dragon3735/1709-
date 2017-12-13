@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.red{
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<ul>
+				<li><input type="checkbox" />我是内容</li>
+				<li><input type="checkbox" />我是内容</li>
+				<li><input type="checkbox" />我是内容</li>
+				<li><input type="checkbox" />我是内容</li>
+				<li><input type="checkbox" />我是内容</li>
+			</ul>
+		</div>
+		
+		
+		<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			$("input").click(function(){
+//				console.log( $(this)[0].checked ) //通过下标[0]转成原生js使用.checked属性判断
+				if( $(this)[0].checked ){  //条件
+//					如果是选中!添加类名
+					$(this).parent().addClass("red");
+				}else{
+//					如果没选中,删除类名
+					$(this).parent().removeClass("red");
+				}
+			})
+			
+		</script>
+	</body>
+</html>

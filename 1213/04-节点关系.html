@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			p{
+				width: 60px;
+				height: 60px;
+				background: #ccc;
+			}
+		</style>
+	</head>
+	<body id="body">
+		<div id="box">
+			<p>111</p>
+			<p>222</p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p id="oP">oP</p>
+			<p></p>
+			<p></p>
+		</div>
+		
+		<script type="text/javascript">
+			var box = document.getElementById("box");
+			var ps = box.getElementsByTagName("p");
+			
+//			console.log(box.childNodes.length);
+//			console.log(box.childNodes[0].nodeType);
+//			console.log(box.childNodes[1].nodeType);
+			
+//			box.childNodes[1].style.background = "red";
+			
+			//通过nodeType去找到元素节点
+//			var child = [];
+//			
+//			for(var i=0;i<box.childNodes.length;i++){
+//				if(box.childNodes[i].nodeType == 1){
+//					child.push(box.childNodes[i]);
+//				}
+//			}
+//			child[0].style.background = "red";
+//			child[1].style.background = "skyblue";
+
+			
+//			console.log(ps[1].parentNode); //找父级
+//			console.log(ps[1].parentNode.id); //找父级 的id
+			
+			
+			
+			//让处理oP的元素外都改变背景颜色
+			var oP = document.getElementById("oP");
+			
+			//找到oP元素的所有哥哥
+//			var prev = oP;
+//			
+//			while(prev = prev.previousSibling){
+//				if(prev.nodeType == 1){
+//					prev.style.background = "orange";
+//				}
+//			}
+			
+			var next = oP;
+			
+			while(next = next.nextSibling){
+				if(next.nodeType == 1){
+					next.style.background = "red";
+				}
+			}
+			
+			
+		</script>
+	</body>
+</html>

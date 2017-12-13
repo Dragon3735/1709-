@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box1{
+				width: 300px;
+				height: 400px;
+				border: 1px solid #000;
+				float: left;
+			}
+			.box2{
+				width: 300px;
+				height: 400px;
+				border: 1px solid #000;
+				float: left;
+			}
+			.tools{
+				float: left;
+			}
+			ul{
+				list-style: none;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div class="box1">
+			<ul>
+				<li><input type="checkbox" />牛肉</li>
+				<li><input type="checkbox" />羊肉</li>
+				<li><input type="checkbox" />土豆</li>
+				<li><input type="checkbox" />黄瓜</li>
+				<li><input type="checkbox" />包子</li>
+				<li><input type="checkbox" />拉面</li>
+				<li><input type="checkbox" />盖饭</li>
+			</ul>
+		</div>
+		
+		<div class="tools">
+			<p><input type="button" id="btn1" value=">>>>>>>>>"/></p>
+			<p><input type="button" id="btn2" value="<<<<<<<<<"/></p>
+		</div>
+		
+		<div class="box2">
+			<ul>
+				
+			</ul>
+		</div>
+		
+		<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			$("#btn1").click(function(){
+//				:checked筛选出所有选中的复选框
+				$(".box1 input:checked").parent().remove().appendTo(".box2 ul");
+				
+				//让所有复选框都变成未选中状态
+				$("input").attr("checked",false);
+				
+			})
+			
+			$("#btn2").click(function(){
+//				:checked筛选出所有选中的复选框
+				$(".box2 input:checked").parent().remove().appendTo(".box1 ul");
+				
+				//让所有复选框都变成未选中状态
+				$("input").attr("checked",false);
+				
+			})
+			
+		</script>
+	</body>
+</html>

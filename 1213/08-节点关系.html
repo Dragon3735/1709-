@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			p{
+				width: 40px;
+				height: 40px;
+				background: #ccc;
+			}
+			li{
+				width: 140px;
+				height: 140px;
+				background: olive;
+				border:1px solid black;
+			}
+			ul{
+				width: 240px;
+				background: gold;
+				border:1px solid black;
+				list-style: none;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<ul>
+				<li>
+					<p></p>
+				</li>
+				<li>
+					<p></p>
+				</li>
+				<li>
+					<p></p>
+				</li>
+				<li>
+					<p></p>
+				</li>
+			</ul>
+		</div>
+		
+		
+		<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			$("ul").parent("*").css("background","red");
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>中文搜索</title>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	</head>
+	<body>
+		<section>
+			<ul class="goodsUl" id="goodsUl">
+				
+			</ul>
+		</section>
+		
+		
+		<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			
+			//接受location.search获取get传参的数据
+			var str = location.search.substr(1);
+			//用分割方法得到 等号= 两把的内容
+			var searchText = str.split("=");
+			//通过下标方式找到id的值
+			
+//			encodeURI() //编码   decodeURI() ：解码
+			var newText = decodeURI(searchText[1]);
+			
+			
+			$.ajax({
+				"url":"http://h6.duchengjiu.top/shop/api_goods.php",
+				"type": "GET",
+				"dataType": "json",
+				"data": {
+					"search_text": newText
+				},
+				"success": function(response){
+					console.log(response);
+					
+					for(var i=0;i<response.data.length;i++){
+					
+						$("#goodsUl").append('<li><img src="' +response.data[i].goods_thumb+ '" alt="" /><p><a href="#">' +response.data[i].goods_name+  '</a></p><p>' +response.data[i].goods_desc+  '</p><p class="oP">￥' +response.data[i].price+'</p></li>')
+					
+					}
+				}
+				
+			});
+		</script>
+	</body>
+</html>

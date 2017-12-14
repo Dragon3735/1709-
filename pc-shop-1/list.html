@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>分类页面</title>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	</head>
+	<body>
+		<header>
+			<ul id="nav">
+				
+			</ul>
+		</header>
+		
+		<section>
+			<ul class="goodsUl" id="goodsUl">
+				
+			</ul>
+		</section>
+		
+		
+		<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			//实现页面分类列表导航功能
+			$.get("http://h6.duchengjiu.top/shop/api_cat.php",function(response){
+//				
+				
+				for(var i=0;i<response.data.length;i++){
+					$("#nav").append('<li><a href="list.html?cat_id=' +response.data[i].cat_id+ '">' +response.data[i].cat_name+ '</a></li>');
+				}
+				
+				
+			})
+			
+			//接受location.search获取get传参的数据
+			var str = location.search.substr(1);
+			//用分割方法得到 等号= 两把的内容
+			var catId = str.split("=");
+			//通过下标方式找到id的值
+			console.log(catId[1]);
+			
+			
+			$.ajax({
+				"url":"http://h6.duchengjiu.top/shop/api_goods.php",
+				"type": "GET",
+				"dataType": "json",
+				"data": {
+					"cat_id": catId[1]
+				},
+				"success": function(response){
+					console.log(response);
+					
+					for(var i=0;i<response.data.length;i++){
+					
+						$("#goodsUl").append('<li><img src="' +response.data[i].goods_thumb+ '" alt="" /><p><a href="#">' +response.data[i].goods_name+  '</a></p><p>' +response.data[i].goods_desc+  '</p><p class="oP">￥' +response.data[i].price+'</p></li>')
+					
+					}
+				}
+				
+			});
+			
+			
+			
+		</script>
+	</body>
+</html>

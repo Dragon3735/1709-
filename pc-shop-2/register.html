@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>注册页面</title>
+		<style type="text/css">
+			.success{
+				background: green;
+				color: white;
+				font-size: 16px;
+				display: none;
+			}
+			.error{
+				background: red;
+				color: white;
+				font-size: 16px;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<!--<form action="index.html">-->
+			<p>
+				<input type="text" name="username" />
+				<span class="success">用户名可以使用</span>
+				<span class="error">用户名重复，请从新输入</span>
+			</p>
+			
+			<input type="password" name="password"/>
+			<input type="button" value="注册" id="reg"/>
+		<!--</form>-->
+		
+		
+		
+		<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			//用户名验证是否重复
+			$('input[name="username"]').blur(function(){
+				var username = $('input[name="username"]').val();
+//				console.log(username);
+				
+				$.ajax({
+					"url": "http://h6.duchengjiu.top/shop/api_user.php",
+					"type": "POST",
+					"dataType": "json",
+					"data": {
+						"status": "check",
+						"username": username
+					},
+					"success": function(response){
+//						console.log(response);
+						
+						if(response.code === 0){
+							//成功
+							$(".success").show();
+							$(".error").hide();
+						}else{
+							$(".error").show();
+							$(".success").hide();
+						}
+					}
+				});
+			})
+			
+			
+			//注册的验证
+			$("#reg").click(function(){
+				var username = $('input[name="username"]').val();
+				var password = $('input[name="password"]').val();
+			
+//				console.log(username,password);
+				
+				if(password.length < 6 || password.length > 20){
+					alert("密码长度应该是6-20位之间");
+					return;
+				}
+				
+//				http://h6.duchengjiu.top/shop/api_user.php
+			  //协议      域名/ip: 端口/path/文件夹/文件名?查询的参数#a
+				
+				$.ajax({
+					"url": "http://h6.duchengjiu.top/shop/api_user.php",
+					"type": "POST",
+					"dataType": "json",
+					"data": {
+						"status": "register",
+						"username": username,
+						"password": password
+					},
+					"success": function(response){
+						console.log(response);
+						
+						if(response.code === 0){
+							alert("注册成功！~");
+							window.location.href = "login.html";
+						}
+					}
+				});
+				
+			})
+		</script>
+	</body>
+</html>

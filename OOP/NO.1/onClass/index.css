@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+.top_nav:after {
+    content: "";
+    display: block;
+    zoom: 1;
+    clear: both;
+}
+.top_nav .item {
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    padding: 0 10px;
+    border-right: 1px solid #5c5c5c;
+    color: white;
+    background-color: #c01734;
+}
+
+.top_nav .item:hover {
+    background-color: #ff8833;
+}

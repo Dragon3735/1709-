@@ -1,0 +1,9 @@
+{
+  "nav":[
+    {"title":"首页111","target":""},
+    {"title":"新闻222","target":""},
+    {"title":"国内333","target":""},
+    {"title":"国外","target":""},
+    {"title":"娱乐","target":""}
+  ]
+}

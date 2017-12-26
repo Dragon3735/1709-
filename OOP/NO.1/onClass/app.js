@@ -47,3 +47,21 @@
 
     document.body.appendChild(createNav("top_nav"));
 })();
+
+
+
+
+// function sum(a,b) {
+//     var result = a+b;
+//     return result;
+// }
+
+function sort(list) {
+
+    var result = list.sort(function (a,b) {
+        return a.localeCompare(b);
+    });
+    return result;
+}
+console.log(sort(["xiaoming"]).count);
+

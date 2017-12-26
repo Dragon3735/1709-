@@ -1,0 +1,15 @@
+{
+  "monster":[
+    {"name":"wa876","skill":"吐舌头","blood":100,"lv":22},
+    {"name":"wa65","skill":"吐舌头","blood":200,"lv":52},
+    {"name":"wa2","skill":"吐舌头","blood":400,"lv":12},
+    {"name":"wa43","skill":"吐舌头","blood":500,"lv":22},
+    {"name":"wa34","skill":"吐舌头","blood":130,"lv":22},
+    {"name":"wa2","skill":"吐舌头","blood":600,"lv":62},
+    {"name":"wa3","skill":"吐舌头","blood":120,"lv":22},
+    {"name":"wa4","skill":"吐舌头","blood":180,"lv":72},
+    {"name":"wa44","skill":"吐舌头","blood":400,"lv":22},
+    {"name":"wa3","skill":"吐舌头","blood":200,"lv":22},
+    {"name":"wa2","skill":"吐舌头","blood":130,"lv":22}
+  ]
+}

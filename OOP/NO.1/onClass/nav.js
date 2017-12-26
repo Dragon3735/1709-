@@ -25,6 +25,7 @@
 
     function createNav(_className) {
         var ul = document.createElement("ul");
+        ul.className = _className?_className:"top_nav";
         ul.className = _className;
         loadData(function (data) {
             // var li = createView("li",data.nav[0].title,ul,"item");
@@ -36,3 +37,9 @@
     }
 
 // })();
+
+
+var list = [1,2,3,4,5,6];
+list.forEach(function (遍历的结果,下标,原数组) {
+    console.log(遍历的结果,下标,原数组);
+});

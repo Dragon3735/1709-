@@ -1,0 +1,19 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.game_view_container {
+    width: 600px;
+    height: 600px;
+    margin: 100px auto;
+    background: #f2f2f2;
+    overflow: hidden;
+    border-radius: 1%;
+}
+.game_view_container:after {
+    content: "";
+    display: block;
+    zoom: 1;
+    clear: both;
+}
